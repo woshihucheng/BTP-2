@@ -1,0 +1,4 @@
+﻿  With_Without_Gamma.cpp
+f:\iet\btp\codes\person_det_bgsub\person_background\with_without_gamma\with_without_gamma.cpp(38): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  With_Without_Gamma.vcxproj -> F:\IET\BTP\Codes\Person_Det_BGSUB\Person_Background\x64\Debug\With_Without_Gamma.exe
+  With_Without_Gamma.vcxproj -> F:\IET\BTP\Codes\Person_Det_BGSUB\Person_Background\x64\Debug\With_Without_Gamma.pdb (Full PDB)

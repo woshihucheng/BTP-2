@@ -1,0 +1,14 @@
+net: "./ANN_3class_500.prototxt"
+test_iter: 115
+test_interval: 50
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 10000
+display: 20
+max_iter: 50000
+momentum: 0.9
+weight_decay: 0.0005
+snapshot: 5000
+snapshot_prefix: "/media/ghost/00521D65521D60A8/IET/BTP/Codes/Ubuntu_Codes/Caffe_train/snaps/ANN_3class/snap"
+solver_mode: GPU

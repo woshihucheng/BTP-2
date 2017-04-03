@@ -1,0 +1,43 @@
+SEED Value: 25
+C Value: 128
+gamma Value: 0.03125
+0 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.950192248853 Class -1 confidence : 0.049807751147
+1 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.949368432352 Class -1 confidence : 0.050631567648
+2 Actual Class: -1.0 Predicted class: -1.0	True  Class 1 confidence: 0.0120612778414 Class -1 confidence : 0.987938722159
+3 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.800704007494 Class -1 confidence : 0.199295992506
+4 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.987437861475 Class -1 confidence : 0.0125621385249
+5 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.986529138869 Class -1 confidence : 0.013470861131
+6 Actual Class: -1.0 Predicted class: -1.0	True  Class 1 confidence: 0.0224244069898 Class -1 confidence : 0.97757559301
+7 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.856691760233 Class -1 confidence : 0.143308239767
+8 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.951257755684 Class -1 confidence : 0.0487422443157
+9 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.737103356289 Class -1 confidence : 0.262896643711
+10 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.954243552615 Class -1 confidence : 0.0457564473852
+11 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.942430322479 Class -1 confidence : 0.0575696775214
+12 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.98682452097 Class -1 confidence : 0.0131754790304
+13 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.805804043168 Class -1 confidence : 0.194195956832
+14 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.973639750559 Class -1 confidence : 0.0263602494408
+15 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.905633357781 Class -1 confidence : 0.0943666422193
+16 Actual Class: -1.0 Predicted class: -1.0	True  Class 1 confidence: 0.0302155325267 Class -1 confidence : 0.969784467473
+17 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.964515002416 Class -1 confidence : 0.0354849975842
+18 Actual Class: 1.0 Predicted class: -1.0	False  Class 1 confidence: 0.457980743671 Class -1 confidence : 0.542019256329
+19 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.985677499414 Class -1 confidence : 0.0143225005861
+20 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.991094169425 Class -1 confidence : 0.00890583057494
+21 Actual Class: -1.0 Predicted class: -1.0	True  Class 1 confidence: 0.0250299416431 Class -1 confidence : 0.974970058357
+22 Actual Class: 1.0 Predicted class: -1.0	False  Class 1 confidence: 0.35070645637 Class -1 confidence : 0.64929354363
+23 Actual Class: -1.0 Predicted class: 1.0	False  Class 1 confidence: 0.98239389861 Class -1 confidence : 0.0176061013897
+24 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.972672762954 Class -1 confidence : 0.0273272370464
+25 Actual Class: -1.0 Predicted class: -1.0	True  Class 1 confidence: 0.00619371738433 Class -1 confidence : 0.993806282616
+26 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.740224168525 Class -1 confidence : 0.259775831475
+27 Actual Class: 1.0 Predicted class: -1.0	False  Class 1 confidence: 0.373955473213 Class -1 confidence : 0.626044526787
+28 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.944100906744 Class -1 confidence : 0.0558990932558
+29 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.801495408222 Class -1 confidence : 0.198504591778
+30 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.990310685221 Class -1 confidence : 0.00968931477918
+31 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.900653086008 Class -1 confidence : 0.0993469139917
+32 Actual Class: -1.0 Predicted class: -1.0	True  Class 1 confidence: 0.045623912691 Class -1 confidence : 0.954376087309
+33 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.929819780123 Class -1 confidence : 0.0701802198774
+34 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.830819226811 Class -1 confidence : 0.169180773189
+35 Actual Class: -1.0 Predicted class: -1.0	True  Class 1 confidence: 0.182064221467 Class -1 confidence : 0.817935778533
+36 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.987541687748 Class -1 confidence : 0.012458312252
+37 Actual Class: -1.0 Predicted class: -1.0	True  Class 1 confidence: 0.00725030447483 Class -1 confidence : 0.992749695525
+38 Actual Class: -1.0 Predicted class: -1.0	True  Class 1 confidence: 0.0623558784059 Class -1 confidence : 0.937644121594
+39 Actual Class: 1.0 Predicted class: 1.0	True  Class 1 confidence: 0.989506545571 Class -1 confidence : 0.0104934544287

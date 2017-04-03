@@ -1,0 +1,8 @@
+﻿  my_train_hog.cpp
+  Generating code
+  4 of 356 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    6 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  my_train_hog.vcxproj -> F:\IET\BTP\Codes\Person_Det_BGSUB\Person_Background\x64\Release\my_train_hog.exe
+  my_train_hog.vcxproj -> F:\IET\BTP\Codes\Person_Det_BGSUB\Person_Background\x64\Release\my_train_hog.pdb (Full PDB)

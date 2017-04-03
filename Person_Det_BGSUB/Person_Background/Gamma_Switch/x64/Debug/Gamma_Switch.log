@@ -1,0 +1,4 @@
+﻿  Gamma_Switch.cpp
+f:\iet\btp\codes\person_det_bgsub\person_background\gamma_switch\gamma_switch.cpp(42): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  Gamma_Switch.vcxproj -> F:\IET\BTP\Codes\Person_Det_BGSUB\Person_Background\x64\Debug\Gamma_Switch.exe
+  Gamma_Switch.vcxproj -> F:\IET\BTP\Codes\Person_Det_BGSUB\Person_Background\x64\Debug\Gamma_Switch.pdb (Full PDB)

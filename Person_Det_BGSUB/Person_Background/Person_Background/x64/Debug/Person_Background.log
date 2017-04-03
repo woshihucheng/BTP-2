@@ -1,0 +1,4 @@
+﻿  OCV_Func.cpp
+f:\iet\btp\codes\person_det_bgsub\person_background\person_background\ocv_func.cpp(206): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Person_Background.vcxproj -> F:\IET\BTP\Codes\Person_Det_BGSUB\Person_Background\x64\Debug\Person_Background.exe
+  Person_Background.vcxproj -> F:\IET\BTP\Codes\Person_Det_BGSUB\Person_Background\x64\Debug\Person_Background.pdb (Full PDB)

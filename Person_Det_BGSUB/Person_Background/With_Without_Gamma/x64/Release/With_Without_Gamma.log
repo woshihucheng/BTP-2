@@ -1,0 +1,7 @@
+﻿  With_Without_Gamma.cpp
+With_Without_Gamma.cpp(38): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  Generating code
+  All 57 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  With_Without_Gamma.vcxproj -> F:\IET\BTP\Codes\Person_Det_BGSUB\Person_Background\x64\Release\With_Without_Gamma.exe
+  With_Without_Gamma.vcxproj -> F:\IET\BTP\Codes\Person_Det_BGSUB\Person_Background\x64\Release\With_Without_Gamma.pdb (Full PDB)
