@@ -1,0 +1,118 @@
+name: "Aug_ANN_3_Class"
+
+layer {
+  name: "data"
+  type: "ImageData"
+  top: "data"
+  top: "label"
+  include {
+    phase: TRAIN
+  }
+  transform_param {
+    mean_file: "mean_img_Aug_3class.binaryproto"
+    scale: 0.00390625
+  }
+  image_data_param {
+    source: "./PETA_Aug_train.txt"
+    batch_size: 50
+  }
+}
+layer {
+  name: "data"
+  type: "ImageData"
+  top: "data"
+  top: "label"
+  include {
+    phase: TEST
+  }
+  transform_param {
+    mean_file: "mean_img_Aug_3class.binaryproto"
+    scale: 0.00390625
+  }
+  image_data_param {
+    source: "./PETA_Aug_val.txt"
+    batch_size: 50
+  }
+}
+
+layer {
+  name: "ip1"
+  type: "InnerProduct"
+  param { lr_mult: 1 }
+  param { lr_mult: 2 }
+  inner_product_param {
+    num_output: 500
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+	 value: 0
+    }
+  }
+  bottom: "data"
+  top: "ip1"
+}
+
+layer {
+  name: "RELU1"
+  type: "ReLU"
+  bottom:"ip1"
+  top: "ip1"
+}
+
+layer {
+  name: "ip2"
+  type: "InnerProduct"
+  param { lr_mult: 1 }
+  param { lr_mult: 2 }
+  inner_product_param {
+    num_output: 500
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+	 value: 0
+    }
+  }
+  bottom: "ip1"
+  top: "ip2"
+}
+
+layer {
+  name: "ip3"
+  type: "InnerProduct"
+  param { lr_mult: 1 }
+  param { lr_mult: 2 }
+  inner_product_param {
+    num_output: 3
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+	 value: 0
+    }
+  }
+  bottom: "ip2"
+  top: "ip3"
+}
+
+layer {
+  name: "accuracy"
+  type: "Accuracy"
+  bottom: "ip3"
+  bottom: "label"
+  top: "accuracy"
+  include {
+    phase: TEST
+  }
+}
+layer {
+  name: "loss"
+  type: "SoftmaxWithLoss"
+  bottom: "ip3"
+  bottom: "label"
+  top: "loss"
+}

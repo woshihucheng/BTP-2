@@ -112,15 +112,17 @@ int main(int argc, char** argv)
 
 			if (boundRect[i].width * boundRect[i].height > atoi(argv[2]))
 			{
-				rectangle(h_frame, boundRect[i].tl(), boundRect[i].br(), color, 2, 8, 0);
+				
+				rectangle(h_frame, boundRect[i].tl(), boundRect[i].br(), color, 2, 8, 0);				
 				Mat ROI(h_frame, boundRect[i]);
 				//cout << boundRect[i].height << " " << boundRect[i].width << endl;
-				resize(ROI, ROI, cv::Size(64, 64), 0, 0, INTER_CUBIC);
+				resize(ROI, ROI, cv::Size(64, 64), 0, 0, INTER_AREA);
 				//cv::cuda::GpuMat d_ROI(ROI);
+								
 				std::vector<Prediction> predictions = classifier.Classify(ROI,1);
-				for (size_t i = 0; i < predictions.size(); ++i)
+				for (size_t j = 0; j < predictions.size(); ++j)
 				{
-    				Prediction p = predictions[i];
+    				Prediction p = predictions[j];
     				std::cout << std::fixed << std::setprecision(4) << p.second << " - \""
               		<< p.first << "\"" << std::endl;
               		if(p.first == "Bag")
@@ -131,6 +133,7 @@ int main(int argc, char** argv)
 						imwrite("./Background/"+ToString(img_no++)+".jpg",ROI);
 
 				}
+				
 				imshow("a", ROI);
 				
 
