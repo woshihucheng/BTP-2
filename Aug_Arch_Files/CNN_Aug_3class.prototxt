@@ -1,0 +1,288 @@
+name: "Aug_ANN_3_Class"
+
+layer {
+  name: "data"
+  type: "ImageData"
+  top: "data"
+  top: "label"
+  include {
+    phase: TRAIN
+  }
+  transform_param {
+    mean_file: "mean_img_Aug_3class.binaryproto"
+    scale: 0.00390625
+  }
+  image_data_param {
+    source: "./PETA_Aug_train.txt"
+    batch_size: 50
+  }
+}
+layer {
+  name: "data"
+  type: "ImageData"
+  top: "data"
+  top: "label"
+  include {
+    phase: TEST
+  }
+  transform_param {
+    mean_file: "mean_img_Aug_3class.binaryproto"
+    scale: 0.00390625
+  }
+  image_data_param {
+    source: "./PETA_Aug_val.txt"
+    batch_size: 50
+  }
+}
+
+#---------------------------------First CRP Layer--------------------------------------
+
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  convolution_param {
+    num_output: 96
+    kernel_size: 3
+    stride: 1
+    pad: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layer {
+  name: "RELU1"
+  type: "ReLU"
+  bottom:"conv1"
+  top: "conv1"
+}
+
+layer {
+  name: "pooling1"
+  type: "Pooling"
+  bottom: "conv1"
+  top: "pooling1"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 1
+  }
+}
+
+#-----------------------------------Second CRP Layer------------------------------------
+
+layer {
+  name: "conv2"
+  type: "Convolution"
+  bottom: "pooling1"
+  top: "conv2"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  convolution_param {
+    num_output: 64
+    kernel_size: 3
+    stride: 1
+    pad: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layer {
+  name: "RELU2"
+  type: "ReLU"
+  bottom:"conv2"
+  top: "conv2"
+}
+
+layer {
+  name: "pooling2"
+  type: "Pooling"
+  bottom: "conv2"
+  top: "pooling2"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 1
+  }
+}
+
+#----------------------------------Third CRP Layer-------------------------------------
+
+layer {
+  name: "conv3"
+  type: "Convolution"
+  bottom: "pooling2"
+  top: "conv3"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  convolution_param {
+    num_output: 32
+    kernel_size: 3
+    stride: 1
+    pad: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layer {
+  name: "RELU3"
+  type: "ReLU"
+  bottom:"conv3"
+  top: "conv3"
+}
+
+layer {
+  name: "pooling3"
+  type: "Pooling"
+  bottom: "conv3"
+  top: "pooling3"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 1
+  }
+}
+
+#-----------------------------------First Fully Conncected Layer------------------------------------
+
+layer {
+  name: "fc1"
+  type: "InnerProduct"
+  param { lr_mult: 1 }
+  param { lr_mult: 2 }
+  inner_product_param {
+    num_output: 1024
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+	 value: 0
+    }
+  }
+  bottom: "pooling3"
+  top: "fc1"
+}
+
+layer {
+  name: "RELU4"
+  type: "ReLU"
+  bottom:"fc1"
+  top: "fc1"
+}
+
+layer {
+  name: "drop1"
+  type: "Dropout"
+  bottom: "fc1"
+  top: "fc1"
+  dropout_param {
+    dropout_ratio: 0.4
+  }
+}
+
+#-----------------------------------Second Fully Conncected Layer------------------------------------
+
+layer {
+  name: "fc2"
+  type: "InnerProduct"
+  param { lr_mult: 1 }
+  param { lr_mult: 2 }
+  inner_product_param {
+    num_output: 1024
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+	 value: 0
+    }
+  }
+  bottom: "fc1"
+  top: "fc2"
+}
+
+layer {
+  name: "RELU5"
+  type: "ReLU"
+  bottom:"fc2"
+  top: "fc2"
+}
+
+layer {
+  name: "drop2"
+  type: "Dropout"
+  bottom: "fc2"
+  top: "fc2"
+  dropout_param {
+    dropout_ratio: 0.4
+  }
+}
+
+layer {
+  name: "ip3"
+  type: "InnerProduct"
+  param { lr_mult: 1 }
+  param { lr_mult: 2 }
+  inner_product_param {
+    num_output: 3
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+	 value: 0
+    }
+  }
+  bottom: "fc2"
+  top: "fc3"
+}
+
+
+layer {
+  name: "accuracy"
+  type: "Accuracy"
+  bottom: "fc3"
+  bottom: "label"
+  top: "accuracy"
+  include {
+    phase: TEST
+  }
+}
+layer {
+  name: "loss"
+  type: "SoftmaxWithLoss"
+  bottom: "fc3"
+  bottom: "label"
+  top: "loss"
+}
